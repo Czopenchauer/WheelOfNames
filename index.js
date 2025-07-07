@@ -1,7 +1,7 @@
 
 let ListOfNames = []
 
-function spin() {
+async function spin() {
     const randomDegree = Math.floor(Math.random() * 10000);
     document.getElementById("wheel-pudelko").animate(
         [
@@ -12,8 +12,7 @@ function spin() {
             iterations: 1
         }
     )
-    const audio = new Audio("sound/wet-fart.mp3");
-    audio.play();
+    document.getElementById("spin-sound").play();
 }
 
 function addNieszczesliwca() {
@@ -43,7 +42,7 @@ function addNieszczesliwca() {
         nameLabel.style.textAlign = "center";
         nameLabel.textContent = name;
         wheel.appendChild(nameLabel);
-    })
+    });
 
     const line = document.getElementById('wheel-canvas');
     const ctx = line.getContext('2d');
