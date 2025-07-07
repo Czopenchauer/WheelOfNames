@@ -1,0 +1,37 @@
+﻿
+.container {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 20px;
+}
+
+.wheel-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 50%;
+}
+
+.img-container
+{
+    position: relative;
+}
+
+.img-rounded {
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.arrow {
+    position: absolute;
+    top: 28%;
+    left: 42%;
+    width: 50px;
+    height: 30px;
+}
