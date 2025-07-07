@@ -12,7 +12,8 @@ function spin() {
             iterations: 1
         }
     )
-
+    const audio = new Audio("sound/wet-fart.mp3");
+    audio.play();
 }
 
 function addNieszczesliwca() {
