@@ -9,16 +9,19 @@
 <audio src="sounds/wet-fart.mp3" id="spin-sound"></audio>
 <div class="container">
     <div id="wheel-container" class="wheel-container">
-        <div>
-            <div id="wheel-pudelko" class="img-container">
-                <img id="wheel" src="images/pepe_the_frog.jpg" alt="Picture" width="600" height="600" class="img-rounded" onclick="spin()">
-            </div>
+        <div id="wheel-pudelko" class="img-container">
+            <img id="wheel" src="images/pepe_the_frog.jpg" alt="Picture" width="600" height="600" class="img-rounded"
+                 onclick="spin()">
+        </div>
+        <div class="img-container">
             <canvas id="arrow" class="arrow"></canvas>
+
         </div>
     </div>
     <div class="text-container">
         <label for="nieszczesliwcy">Podaj nieszczęśliwca</label>
-        <textarea name="nieszczesliwcy" id="nieszczesliwcy" oninput="addNieszczesliwca()" style="height: 40%"></textarea>
+        <textarea name="nieszczesliwcy" id="nieszczesliwcy" oninput="addNieszczesliwca()"
+                  style="height: 40%"></textarea>
     </div>
 </div>
 </body>

@@ -26,7 +26,7 @@ function addNieszczesliwca() {
     const wheelImage = document.getElementById("wheel");
 
     const numberOfNames = ListOfNames.length;
-    for(let i = wheel.childElementCount - 1; i >= 2; i--) {
+    for(let i = wheel.childElementCount - 1; i >= 1; i--) {
         wheel.removeChild(wheel.children[i]);
     }
     ListOfNames.forEach((name, idx) => {
@@ -35,9 +35,10 @@ function addNieszczesliwca() {
         const radius = wheelImage.width / 2;
         nameLabel.style.transform = "rotate(" + angle + "deg) translateY(" + radius / 5 + "px) translateX(" + radius + "px)";
         nameLabel.style.position = "absolute";
-        nameLabel.style.fontSize = "20px";
+        nameLabel.style.fontSize = "30px";
+        nameLabel.style.color = "red";
         nameLabel.style.top = "50%";
-        nameLabel.style.right = "50%";
+        nameLabel.style.right = "45%";
         nameLabel.style.fontWeight = "bold";
         nameLabel.style.textAlign = "center";
         nameLabel.textContent = name;
