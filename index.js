@@ -1,7 +1,20 @@
 
 let ListOfNames = []
+let youtubeVideo = '';
+let time = 0;
+let tag = document.createElement('script');
 
-async function spin() {
+tag.src = "https://www.youtube.com/iframe_api";
+let firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+let player;
+
+function spin() {
+    if(time !== undefined){
+        player.loadVideoById({'videoId': youtubeVideo,
+            'startSeconds': time});
+    }
+    player.loadVideoById({'videoId': youtubeVideo});
     const randomDegree = Math.floor(Math.random() * 10000);
     document.getElementById("wheel-pudelko").animate(
         [
@@ -12,7 +25,6 @@ async function spin() {
             iterations: 1
         }
     )
-    document.getElementById("spin-sound").play();
 }
 
 function addNieszczesliwca() {
@@ -54,4 +66,39 @@ function addNieszczesliwca() {
     ctx.lineTo(250, 140);
     ctx.closePath();
     ctx.stroke();
+}
+
+function setVideo(){
+    const ytRegex = /\/([^\/?]+)\?/;
+    const timeRegex = /\?t=(\d+)/;
+    const videoId = ytRegex.exec(document.getElementById("youtube-url").value);
+    const timeMatch = timeRegex.exec(document.getElementById("youtube-url").value);
+
+    console.log(videoId);
+    youtubeVideo = videoId[1] ?? videoId[0];
+    time = timeMatch[1] !== undefined ? parseInt(timeMatch[1]) : 0;
+}
+
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+        height: '200',
+        width: '200',
+        events: {
+            // 'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+        }
+    });
+}
+
+function onPlayerReady(event) {
+    event.target.playVideo();
+}
+
+function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING) {
+        setTimeout(stopVideo, 6000);
+    }
+}
+function stopVideo() {
+    player.stopVideo();
 }

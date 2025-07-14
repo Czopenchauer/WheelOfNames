@@ -3,11 +3,11 @@
 <head>
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Koło szczęścia i rozkoszy</title>
 </head>
 <body>
-<audio src="sounds/wet-fart.mp3" id="spin-sound"></audio>
 <div class="container">
+    <div class="engagement"></div>
     <div id="wheel-container" class="wheel-container">
         <div id="wheel-pudelko" class="img-container">
             <img id="wheel" src="images/pepe_the_frog.jpg" alt="Picture" width="600" height="600" class="img-rounded"
@@ -22,8 +22,13 @@
         <label for="nieszczesliwcy">Podaj nieszczęśliwca</label>
         <textarea name="nieszczesliwcy" id="nieszczesliwcy" oninput="addNieszczesliwca()"
                   style="height: 40%"></textarea>
+        <label>
+            <input type="text" id="youtube-url" placeholder="Wklej link do YouTube" oninput="setVideo()">
+        </label>
     </div>
+    <div class="engagement"></div>
 </div>
+<div id="player" style="visibility:hidden"></div>
 </body>
 </html>
 <script src="index.js"></script>

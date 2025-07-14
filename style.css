@@ -1,7 +1,7 @@
 ﻿
 .container {
     display: grid;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 10% 45% 25% 10%;
     gap: 20px;
 }
 
@@ -36,7 +36,7 @@
     height: 30px;
 }
 
-body{
+.engagement {
     background-image: url('images/subway.gif');
     background-size: auto;
 }
